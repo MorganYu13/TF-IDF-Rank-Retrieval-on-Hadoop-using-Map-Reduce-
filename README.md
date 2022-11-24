@@ -97,12 +97,12 @@ the mobile is great but overheating is so annoying
 
 - `jps` to confirm all nodes running. Make sure you get: 
 ```bash
-			5392 Jps
-			3427 NameNode
-			4133 NodeManager
-			3557 DataNode
-			3751 SecondaryNameNode
-			3996 ResourceManager
+	5392 Jps
+	3427 NameNode
+	4133 NodeManager
+	3557 DataNode
+	3751 SecondaryNameNode
+	3996 ResourceManager
 ```                
 - Now make a folder in HDFS using 
 ```bash
