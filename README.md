@@ -263,18 +263,18 @@ Docs and presence of query terms:
 		doc 3 has the terms {great}
 
 therefore we do: 
-        tf-idf(doc1_laptop) + tf-idf(doc1_great)  = total relevancy score for doc 1
-        tf-idf(doc2_laptop)                       = total relevancy score for doc 2
-        tf-idf(doc3_great)                        = total relevancy score for doc 3
+		tf-idf(doc1_laptop) + tf-idf(doc1_great)  = total relevancy score for doc 1
+		tf-idf(doc2_laptop)                       = total relevancy score for doc 2
+		tf-idf(doc3_great)                        = total relevancy score for doc 3
 ```
 <br>
  We see that in the output we get: 
- <br>
- ```
- *********** DocId most fitting with the query ***********
-			 0.1158 is the cummulative tf-idf for the Doc ID 1 
-			 0.0451 is the cummulative tf-idf for the Doc ID 3 
-			 0.0406 is the cummulative tf-idf for the Doc ID 2
+
+```
+*********** DocId most fitting with the query ***********
+		 0.1158 is the cummulative tf-idf for the Doc ID 1 
+		 0.0451 is the cummulative tf-idf for the Doc ID 3 
+		 0.0406 is the cummulative tf-idf for the Doc ID 2
 ```
 
 Therefore Doc 1 got the highest score, since both laptop and great was present, the other two almost having the same score since only one of the terms (laptop/great) was present in those Docs. 
@@ -289,7 +289,7 @@ Therefore Doc 1 got the highest score, since both laptop and great was present, 
 - The limitations above mentioned can be fixed by adding a feature by incorporating a weight parameter in the cumulative relevancy score calculation for each doc. By manually setting weights while taking in the query input, and multiplying the weight for each query with the tf-idf can help with this. 
 - Example:- where weight for laptop is kept much higher than for great, the docs which have Laptops will be shown first. 
 ```
-	    wt(laptop)*tf-idf(doc1_laptop) + wt(great)*tf-idf(doc1_great)  = total relevancy score for doc 1
+	wt(laptop)*tf-idf(doc1_laptop) + wt(great)*tf-idf(doc1_great)  = total relevancy score for doc 1
         wt(laptop)*tf-idf(doc2_laptop)                                 = total relevancy score for doc 2
         wt(great)tf-idf(doc3_great)                                    = total relevancy score for doc 3
 ```
