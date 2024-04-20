@@ -14,19 +14,36 @@ Doc ID 3 - The mobile is great. But overheating is so annoying  >>:((
 Doc ID 4 - The mobile is ok ok. 
 Doc ID 5 - The bag and mobile combo is epic!!
 ```
-**Input** 
-<br>We give in a query for example = 
-```
-query:
+### Input 
+<br>We give in a query for example `great laptop`
 
-great laptop
-```
-
-**Output**
+### Output
 <br>We get a resorted list of documents (only the ones which have the query terms), top most document being the most relevant and closest to the query, ranging from top most relevancy to least. 
 
 ```
-sorted list of Docs according to query
+query: 
+		"great laptop"
+corpus:
+		the laptop isnt that great so annoying  
+		the bag which came along with the laptop is ok  
+		the mobile is great but overheating is so annoying
+
+Docs and presence of query terms: 
+		doc 1 has the terms {laptop, great}
+		doc 2 has the terms {laptop}
+		doc 3 has the terms {great}
+
+therefore we do: 
+		tf-idf(doc1_laptop) + tf-idf(doc1_great)  = total relevancy score for doc 1
+		tf-idf(doc2_laptop)                       = total relevancy score for doc 2
+		tf-idf(doc3_great)                        = total relevancy score for doc 3
+
+*********** DocId most fitting with the query ***********
+		 0.1158 is the cummulative tf-idf for the Doc ID 1 
+		 0.0451 is the cummulative tf-idf for the Doc ID 3 
+		 0.0406 is the cummulative tf-idf for the Doc ID 2
+
+FINAL OUTPUT - sorted list of Docs according to query
 
 Doc ID 1 - The laptop isn't that great. So ANNOYING!!!!
 Doc ID 3 - The bag which came along with the laptop is ~~$ok. 
